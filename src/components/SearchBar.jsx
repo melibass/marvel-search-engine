@@ -23,7 +23,7 @@ export default function SearchBar({setter}) {
   return (
     <form>
         <input type="text" placeholder='Type a hero...' ref={input}/>
-        <button onClick={handleClick}> Search </button>
+        <button onClick={handleClick}> Search now</button>
     </form>
   )
 }
