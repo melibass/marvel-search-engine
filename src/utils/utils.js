@@ -6,6 +6,8 @@ const getHash = (ts, secretKey, publicKey) => {
     return MD5(ts + secretKey + publicKey).toString();
   };
 
+  // get all characters and data 
+  
 const fetchHeroes = async (value) =>{
     let baseUrl = `${API_URL}/v1/public/characters`
 
