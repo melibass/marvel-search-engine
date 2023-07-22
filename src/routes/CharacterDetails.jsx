@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function HeroDetails() {
+export default function CharacterDetails() {
   return (
     <div>HeroDetails</div>
   )

@@ -3,7 +3,7 @@ import './index.css';
 
 //import routes
 import Home from './routes/Home';
-import HeroDetails from './routes/HeroDetails'
+import CharacterDetails from './routes/CharacterDetails'
 //import components
 import NavBar from './components/NavBar';
 
@@ -16,7 +16,7 @@ function App() {
 
       <Routes>
         <Route path={'/'} element={<Home/>}/>
-        <Route path={'/:id'} element={<HeroDetails/>}/>
+        <Route path={'/:id'} element={<CharacterDetails/>}/>
       </Routes>
     </Router> 
   );
