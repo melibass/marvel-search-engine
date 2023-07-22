@@ -3,7 +3,7 @@ import './index.css';
 
 //import routes
 import Home from './routes/Home';
-import CharacterDetails from './routes/CharacterDetails'
+import CharacterDetails from './routes/CharacterDetails';
 //import components
 import NavBar from './components/NavBar';
 

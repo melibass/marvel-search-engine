@@ -6,7 +6,7 @@ const getHash = (ts, secretKey, publicKey) => {
     return MD5(ts + secretKey + publicKey).toString();
   };
 
-const fetchHeroes = async (value) =>{
+const fetchHeroes = async (name) =>{
     let baseUrl = `${API_URL}/v1/public/characters`
 
     let ts = Date.now().toString();
@@ -14,7 +14,7 @@ const fetchHeroes = async (value) =>{
     let privateKey= process.env.REACT_APP_API_PRIVATE_KEY;
     let hash = getHash(ts, privateKey, apiKey)
 
-    let url = `${baseUrl}?ts=${ts}&apikey=${apiKey}&hash=${hash}&nameStartsWith=${value}`;
+    let url = `${baseUrl}?ts=${ts}&apikey=${apiKey}&hash=${hash}&nameStartsWith=${name}`;
 
     try{
         let response = await fetch(url)
@@ -27,4 +27,25 @@ const fetchHeroes = async (value) =>{
     }
 }
 
-export {fetchHeroes};
+const fetchHero = async (id) =>{
+    let baseUrl = `${API_URL}/v1/public/characters/${id}`
+
+    let ts = Date.now().toString();
+    let apiKey = process.env.REACT_APP_API_KEY;
+    let privateKey= process.env.REACT_APP_API_PRIVATE_KEY;
+    let hash = getHash(ts, privateKey, apiKey)
+
+    let url = `${baseUrl}?ts=${ts}&apikey=${apiKey}&hash=${hash}`;
+
+    try{
+        let response = await fetch(url)
+        let data = await response.json()
+        console.log(data)
+        return data
+    } catch(err){
+        console.error(err)
+        return
+    }
+}
+
+export {fetchHeroes, fetchHero};
